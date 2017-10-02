@@ -1,0 +1,45 @@
+$header-height: 100px;
+$footer-height: 50px;
+
+html, body {
+  min-height: 100%;
+  height: auto;
+}
+
+html, body, * {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  // see https://css-tricks.com/snippets/css/font-stacks/
+  font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+header, footer {
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: #222;
+}
+
+header {
+  height: $header-height;
+}
+
+main {
+  min-height: calc(100vh - #{$header-height + $footer-height});
+  overflow: auto;
+}
+
+main:after {
+  content: "";
+  display: block;
+}
+
+footer {
+  height: $footer-height;
+  justify-content: center;
+}
